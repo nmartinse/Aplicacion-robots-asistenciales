@@ -13,11 +13,15 @@ La interfaz debe permitir a los trabajadores de un entorno hospitalario:
 Para poder acceder a las dos interfaces diferenciadas se necesitan los dos siguientes usuarios.
 
 Usuario encargado:
+
 	usuario: encargado
+	
 	contraseña: encargado
 	
 Usuario técnico:
+
 	usuario: técnico
+	
 	contraseña: técnico
 
 
