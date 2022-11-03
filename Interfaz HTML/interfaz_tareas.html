@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Crear una tarea </title>
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+</head>
+
+<style>
+    a:link {
+        text-decoration: none;
+        color: rgb(6, 50, 115);
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: rgb(6, 50, 115);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:active {
+        text-decoration: underline;
+    }
+
+    body {
+        background-color: #a1d8fb;
+    }
+
+    h1.Copper {
+        font-family: Copperplate, Papyrus, fantasy;
+        text-align: center
+    }
+
+    h1.principal {
+        font-family: "Audiowide", sans-serif;
+        color: rgb(6, 50, 115);
+    }
+
+    .inline-div {
+        margin-left: 500px;
+    }
+
+    .button2 {
+        width: 20%;
+        height: 50px;
+        font-size: 24px;
+        text-align: center;
+        position: absolute;
+        bottom: 30px;
+        right: 600px;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #0462aa;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+
+
+    .button2:hover {
+        background-color: #3e6f8e
+    }
+</style>
+
+<body>
+    <center>
+        <h1 class="principal"> Formulario para crear una tarea</h1>
+    </center>
+
+
+    <div class="inline-div">
+
+        <form action="../../editar_tareas.php" target="_blank">
+
+            <p>Nombre de la tarea: <input type="text" name="nombre"></p>
+
+            <p>Atributos: <input type="text" name="atributos"></p>
+
+            <p>
+
+                Descripción:<br>
+
+                <textarea name="descripcion"></textarea>
+
+            </p>
+
+            <p>
+
+                <input type="submit" class="button2" value="Crear tarea">
+
+
+            </p>
+
+          
+        </form>
+    </div>
+</body>
+
+
+
+
+</html>
