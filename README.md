@@ -20,9 +20,9 @@ Usuario encargado:
 	
 Usuario técnico:
 
-	usuario: técnico
+	usuario: tecnico
 	
-	contraseña: técnico
+	contraseña: tecnico
 
 
 <p align="center">
