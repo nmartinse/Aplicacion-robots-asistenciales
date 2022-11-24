@@ -95,10 +95,8 @@
     }
 
     .inline-div-derecha {
-        display: inline-block;
-        width: 19%;
-        height: 400px;
-        /* border:1px solid black; */
+        width: 50%;
+        float: right;
     }
 
     .inline-div-izquierda {
@@ -138,11 +136,22 @@
     ul {
         list-style-type: none;
     }
+
+    table {
+        border: 2px solid rgb(18, 139, 219);
+        border-collapse: collapse;
+        width: 100%;
+        text-align: center;
+        background-color: #ceecff;
+    }
+
+    th, td {
+        border: 1px solid rgb(18, 139, 219);
+        
+    }
 </style>
 
 <script>
-
-
 
     function anadir() {
         var nuevaTarea = document.createElement('li');
@@ -168,29 +177,24 @@
 
         <h1 class="Copper">Tareas</h1>
         <center>
-            &nbsp; &nbsp; &nbsp; Tarea 1 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 2 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 3 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 4 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 5 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 6 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 7 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 8 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 9 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 10 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 11 ------------------------------------------------------<br>
-
-            &nbsp; &nbsp; &nbsp; Tarea 12 ------------------------------------------------------<br>
+            <table>
+                <tr>
+                    <th> Tarea</th>
+                    <th>Atributos</th>
+            
+                </tr>
+                {% for task in tasks %} 
+                <tr>
+                     <td> {{ task.content }}</td> 
+                     <td>
+                        {% for atributo in atributos %}
+                        <li>{{ task.nombre }}</li>
+                        {% endfor %}
+                    </td> 
+                   
+                </tr>
+                {% endfor %}
+                </table>
 
         </center>
     </div>
