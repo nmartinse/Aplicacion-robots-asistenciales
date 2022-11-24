@@ -1,38 +1,101 @@
-{% extends 'base.html' %}
+<html>
 
-{% block head %}
+<head>
+  <title>Acceso Artemisa</title>
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png" />
 
-{% endblock %}
+  <style>
+    h1 {
+      font-family: Copperplate, Papyrus, fantasy;
+    }
 
-{% block body %}
-<h1> Task Master </h1>
+    body {
+      background-image: url("https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Gradiente.png");
+      background-repeat: repeat-x;
+    }
 
-<div class="content"> 
-    <table>
-    <tr>
-        <th> Task</th>
-        <th>Added</th>
-        <th>Actions</th>
+    div.acceso {
+      border: 2px solid rgb(33, 103, 144);
+      border-radius: 5px;
+      padding: 5px;
+      margin-right: 300px;
+      margin-left: 300px;
+      background-color: rgb(255, 255, 255);
+    }
 
-    </tr>
-    {% for task in tasks %} 
-    <tr>
-         <td> {{ task.content }}</td> <!-- Esto lo que hace es indicar que aquí se pondrá el valor del contenido de la tarea -->
-        <!-- La siguiente linea es para poner la fecha sin la hora -->
-         <td>{{ task.date_created.date() }}</td> 
-        <td>
-            <a href="/delete/{{ task.id }}">Delete</a>
-            <br>
-            <a href="/update/{{ task.id }}">Update</a>
-        </td>
-    </tr>
-    {% endfor %}
-    </table>
+    .addMore {
+      border: none;
+      background-color: rgb(255, 255, 255);
+      transition: all ease-in-out 0.1s;
+      cursor: pointer;
+    }
 
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Add Task">
-    </form>
+    .addMore:hover {
+      background-color: #ddd;
+    }
+  </style>
 
-</div>
-{% endblock %}
+  <script>
+    var attempt = 3; // Variable para contar el número de intentos
+
+    // Esta función se ejecuta al hacer clic en el botón de inicio de sesión
+    function validate() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      if (username == "encargado" && password == "encargado") {
+        alert("Login correcto");
+        window.location = "interfaz_encargado.html"; // Redirección a la vista de encargado
+        return false;
+      }
+      if (username == "tecnico" && password == "tecnico") {
+        alert("Login correcto");
+        window.location = "Interfaz_tecnico.html"; // Redirección a la vista de tecnico
+        return false;
+      }
+      else {
+        attempt--; // Decrementamos la variable del número de intentos
+        alert("Intentos restantes: " + attempt);
+        // Deshabilitamos los campos cuando no quedan más intentos
+        if (attempt == 0) {
+          document.getElementById("username").disabled = true;
+          document.getElementById("password").disabled = true;
+          document.getElementById("submit").disabled = true;
+          return false;
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <center>
+    <h1> Aplicacion para el control de robots asistenciales </h1>
+
+    <img
+      src="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png"
+      width="20%"> <br> <br>
+
+    <div class="acceso">
+      <h3> Acceso <button class="addMore" title="Acceso para los usuarios encargado y tecnico">&#9432;</button>
+      </h3> <br>
+
+      <form method="post">
+        Usuario: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- Usuario  -->
+        <input type="text" name="username" id="username" maxlength="35" size="45"> <br> <br>
+
+        Contraseña: &nbsp;
+        <!-- Contraseña -->
+        <input type="password" name="password" id="password" maxlength="35" size="45"> <br> <br>
+
+        <!-- Boton Entrar -->
+        <input type="button" value="Entrar" id="submit" onclick="validate()" />
+      </form>
+    </div>
+  </center>
+</body>
+
+</html>
