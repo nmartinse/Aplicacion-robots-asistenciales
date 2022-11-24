@@ -1,174 +1,19 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
+{% block head %}
+
     <title> Vista de encargado </title>
 
     <link rel="shortcut icon" type="image/x-icon"
         href="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-</head>
 
-<style>
-    a:link {
-        text-decoration: none;
-        color: rgb(6, 50, 115);
-    }
+{% endblock %}
 
-    a:visited {
-        text-decoration: none;
-        color: rgb(6, 50, 115);
-    }
+{% block body %}
 
-    a:hover {
-        text-decoration: underline;
-    }
-
-    a:active {
-        text-decoration: underline;
-    }
-
-    body {
-        background-color: #a1d8fb;
-    }
-
-    h1.Copper {
-        font-family: Copperplate, Papyrus, fantasy;
-        text-align: center
-    }
-
-    h1.principal {
-        font-family: "Audiowide", sans-serif;
-        color: rgb(6, 50, 115);
-    }
-
-    .button {
-        width: 100%;
-        height: 50px;
-        font-size: 24px;
-        text-align: center;
-        cursor: pointer;
-        outline: none;
-        color: #fff;
-        background-color: #04AA6D;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #999;
-    }
-
-    .button2 {
-        width: 20%;
-        height: 50px;
-        font-size: 24px;
-        text-align: center;
-        position: absolute;
-        bottom: 30px;
-        right: 600px;
-        cursor: pointer;
-        outline: none;
-        color: #fff;
-        background-color: #0462aa;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #999;
-    }
-
-    .button:hover {
-        background-color: #3e8e41
-    }
-
-    .button2:hover {
-        background-color: #3e6f8e
-    }
-
-    .button:active {
-        background-color: #3e8e41;
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
-    }
-
-    .button2:active {
-        background-color: #3e6f8e;
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
-    }
-
-    .inline-div-derecha {
-        width: 50%;
-        float: right;
-    }
-
-    .inline-div-izquierda {
-        width: 500px;
-        float: left;
-    }
-
-    .inline-div-izquierda2 {
-        width: 72px;
-        float: left;
-    }
-
-    .button3 {
-        width: 25px;
-        height: 25px;
-        border: none;
-        border-radius: 15px;
-        background-color: #d8ffd8;
-    }
-
-    .button3:hover {
-        background-color: #5aff31
-    }
-
-    .button4 {
-        width: 25px;
-        height: 25px;
-        border: none;
-        border-radius: 15px;
-        background-color: #ffb7b7;
-    }
-
-    .button4:hover {
-        background-color: #ff4646
-    }
-
-    ul {
-        list-style-type: none;
-    }
-
-    table {
-        border: 2px solid rgb(18, 139, 219);
-        border-collapse: collapse;
-        width: 100%;
-        text-align: center;
-        background-color: #ceecff;
-    }
-
-    th, td {
-        border: 1px solid rgb(18, 139, 219);
-        
-    }
-</style>
-
-<script>
-
-    function anadir() {
-        var nuevaTarea = document.createElement('li');
-        var newTarea = prompt("Nº de la tarea a añadir");
-        nuevaTarea.appendChild(document.createTextNode('Tarea ' + newTarea + ' ------------------------------------------------------'));
-        document.querySelector('ul').appendChild(nuevaTarea);
-    };
-
-    function eliminar() {
-        const list = document.getElementById("myList");
-        list.removeChild(list.lastChild);
-    };
-
-</script>
-
-<body>
-    <a style="float:right" href="index.html">Cerrar sesión</a>
+<a style="float:right" href="index.html">Cerrar sesión</a>
     <center>
         <h1 class="principal"> Vista de encargado Artemisa</h1>
     </center>
@@ -227,6 +72,7 @@
 
     <button id="boton2" class="button2" onclick="window.location.href='interfaz_encargado.html';">Reset</button>
 
-</body>
 
-</html>
+
+
+{% endblock %}
