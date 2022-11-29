@@ -11,7 +11,8 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
     completed = db.Column(db.Integer, default=0)
-    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    priority = db.Column(db.Integer, default=0)
+
     def __repr__(self):
         return '<Task %r' % self.id
 
@@ -30,7 +31,7 @@ def index():
         except:
             return "Problem while insereting in the DB"
     else:
-        tasks = Todo.query.order_by(Todo.date_created).all() # Este método nos devuelve todos los elementos de la tabla de la base de datos
+        tasks = Todo.query.order_by(Todo.priority).all() # Este método nos devuelve todos los elementos de la tabla de la base de datos
         return render_template('index.html', tasks=tasks) # El primer tasks es el que usaremos para representar las tareas en el index.html
 
 @app.route('/delete/<int:id>')
