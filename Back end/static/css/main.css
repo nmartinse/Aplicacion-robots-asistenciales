@@ -45,42 +45,22 @@ h1.principal {
     box-shadow: 0 9px #999;
   }
 
-  .button2 {
-    width: 20%;
-    height: 50px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #0462aa;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-  }
+  
 
   .button:hover {
     background-color: #3e8e41
   }
 
-  .button2:hover {
-    background-color: #3e6f8e
-  }
+ 
 
-  .button:active {
+.button:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+}
 
-  .button2:active {
-    background-color: #3e6f8e;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
-
-
-.button5 {
+  
+.button2 {
     width: 20%;
     height: 50px;
     font-size: 24px;
@@ -98,12 +78,12 @@ h1.principal {
 }
 
 
-.button5:hover {
+.button2:hover {
     background-color: #3e6f8e
 }
 
 
-.button5:active {
+.button2:active {
     background-color: #3e6f8e;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
