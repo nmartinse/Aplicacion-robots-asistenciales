@@ -30,6 +30,7 @@ h1.principal {
     color: rgb(6, 50, 115);
 }
 
+
 .button {
     width: 100%;
     height: 50px;
@@ -42,9 +43,44 @@ h1.principal {
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
-}
+  }
 
-.button2 {
+  .button2 {
+    width: 20%;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #0462aa;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+
+  .button:hover {
+    background-color: #3e8e41
+  }
+
+  .button2:hover {
+    background-color: #3e6f8e
+  }
+
+  .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .button2:active {
+    background-color: #3e6f8e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+
+.button5 {
     width: 20%;
     height: 50px;
     font-size: 24px;
@@ -61,21 +97,13 @@ h1.principal {
     box-shadow: 0 9px #999;
 }
 
-.button:hover {
-    background-color: #3e8e41
-}
 
-.button2:hover {
+.button5:hover {
     background-color: #3e6f8e
 }
 
-.button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
 
-.button2:active {
+.button5:active {
     background-color: #3e6f8e;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
