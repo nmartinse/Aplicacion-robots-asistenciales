@@ -58,9 +58,13 @@ def update(id):
     else:
         return render_template('update.html', task=task)
 
-@app.route('/Interfaz_tecnico.html', methods=['POST','GET'])
+@app.route('/Interfaz_tecnico.html', methods=['POST','GET'])   # Redireccion a Tecnico
 def tecnico():
     return render_template('Interfaz_tecnico.html')
+
+@app.route('/interfaz_encargado.html', methods=['POST','GET'])   # Redireccion a Encargado
+def encargado():
+    return render_template('interfaz_encargado.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
