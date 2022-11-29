@@ -66,5 +66,9 @@ def tecnico():
 def encargado():
     return render_template('interfaz_encargado.html')
 
+@app.route('/interfaz_tareas.html', methods=['POST','GET'])   # Redireccion a formulario tareas
+def tareas():
+    return render_template('interfaz_tareas.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

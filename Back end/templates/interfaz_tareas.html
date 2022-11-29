@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
+{% block head %}
     <title> Crear una tarea </title>
 
     <link rel="shortcut icon" type="image/x-icon"
         href="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-</head>
+    {% endblock %}
 
-<style>
+    {% block body %}
+
+<!-- <style>
     a:link {
         text-decoration: none;
         color: rgb(6, 50, 115);
@@ -94,7 +95,7 @@
         background-color: #3e6f8e
     }
 
-</style>
+</style> -->
 
 <body>
     <center>
@@ -126,12 +127,9 @@
                     <input type="submit" class="button2" value="Crear tarea">
                 </p>
 
+                <button type="button" class="button3" onClick="window.location.href='Interfaz_tecnico.html';">Cancelar</button>
+
             </form>
         </div>
     </center>
-</body>
-
-
-
-
-</html>
+    {% endblock %}
