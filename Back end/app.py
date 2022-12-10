@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' # 3 barras porque es un path relativo. SI fuera absoluto, serían 4 barras
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' # 3 barras porque es un path relativo. Si fuera absoluto, serían 4 barras
 with app.app_context():
     db = SQLAlchemy(app)
 
@@ -17,22 +17,13 @@ class Todo(db.Model):
         return '<Task %r' % self.id
 
 
-@app.route('/', methods=['POST', 'GET']) ## Indica qué hacer cuando un usuario llegua a la pagina principal
+@app.route('/', methods=['POST', 'GET']) ## Indica qué hacer cuando un usuario llega a la pagina principal
 def index():
-    if request.method == 'POST':
-        task_content = request.form['content']
-        new_task = Todo(content=task_content)
+    return render_template('index.html') # Renderizar index.html
 
-        try:
-            db.session.add(new_task)
-            db.session.commit()
-            return redirect('/')
-        
-        except:
-            return "Problem while insereting in the DB"
-    else:
-        tasks = Todo.query.order_by(Todo.priority).all() # Este método nos devuelve todos los elementos de la tabla de la base de datos
-        return render_template('index.html', tasks=tasks) # El primer tasks es el que usaremos para representar las tareas en el index.html
+@app.route('/index.html', methods=['POST', 'GET'])
+def index_alt():
+    return render_template('index.html') # Renderizar index.html
 
 @app.route('/delete/<int:id>')
 def delete(id):
