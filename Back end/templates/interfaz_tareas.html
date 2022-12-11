@@ -109,7 +109,7 @@
 
                 <p>
                     Nombre de la tarea:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="nombre" size="45" value="Tarea sin definir"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="nombre" size="45" value="{{ task.content }}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
 
                 <p>
@@ -120,11 +120,11 @@
 
                 <p>
                     Descripción:<br>
-                    <textarea name="descripcion" rows="10" cols="50">Descripcion de la tarea</textarea>
+                    <textarea name="descripcion" rows="10" cols="50">{{ task.descripcion }}</textarea>
                 </p>
 
                 <p>
-                    <input type="submit" class="button2" id="nombre" value="Crear tarea">
+                    <input type="submit" class="button2" value="Crear tarea">
                     
                 </p>
 

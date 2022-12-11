@@ -12,6 +12,7 @@ class Todo(db.Model):
     content = db.Column(db.String(200), nullable=False)
     completed = db.Column(db.Integer, default=0)
     priority = db.Column(db.Integer, default=0)         # Nueva tabla
+    descripcion = db.Column(db.String(200))             # Descripcion
 
     def __repr__(self):
         return '<Task %r' % self.id
@@ -19,11 +20,22 @@ class Todo(db.Model):
 
 @app.route('/', methods=['POST', 'GET']) ## Indica qué hacer cuando un usuario llega a la pagina principal
 def index():
+    
     return render_template('index.html') # Renderizar index.html
 
 @app.route('/index.html', methods=['POST', 'GET'])
 def index_alt():
     return render_template('index.html') # Renderizar index.html
+    # task_content = "Test"
+    # new_task = Todo(content=task_content)
+
+    # try:
+    #         db.session.add(new_task)
+    #         db.session.commit()
+    #         return redirect('/')
+        
+    # except:
+    #         return "Problem while insereting in the DB"
 
 #---------------------------------------------------------------------------------------------------------#
 
@@ -70,6 +82,7 @@ def update_tarea(id):
     if request.method == 'POST':
         try:
             task.content = request.form['nombre']
+            task.descripcion = request.form['descripcion']
             db.session.commit()
             return redirect('/Interfaz_tecnico.html')
         except:
@@ -85,6 +98,7 @@ def new_tarea(id):
 
         try:
             task_content = request.form['nombre']
+            task_content = request.form['nombre']
             new_task = Todo(content=task_content)
             db.session.add(new_task)
             db.session.commit()
@@ -92,7 +106,7 @@ def new_tarea(id):
         except:
             return "There was an issue when updating the task " + id
     else:
-        return render_template('interfaz_tareas.html', task=task)
+        return render_template('interfaz_tareas_nueva.html', task=task)
     
 
 

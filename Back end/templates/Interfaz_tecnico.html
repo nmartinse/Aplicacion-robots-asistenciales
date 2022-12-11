@@ -12,131 +12,76 @@
 {% endblock %}
 
 {% block body %}
-<!-- <script>
-  var clicks = 12;
-  var robots = 4;
 
-  function anadir() {
-    clicks += 1;
-    document.getElementById("clicks").innerHTML = clicks;
-  };
+<a style="float:right" href="index.html">Cerrar sesión</a>
+<center>
+  <h1 class="principal"> Vista de técnico Artemisa</h1>
+</center>
 
-  function eliminar() {
-    if (clicks > 0) {
-      clicks -= 1;
-      document.getElementById("clicks").innerHTML = clicks;
-    }
-  };
+<div class="inline-div-izquierda">
 
-  function anadirR() {
-    robots += 1;
-    document.getElementById("robots").innerHTML = robots;
-  };
-
-  function eliminarR() {
-    if (robots > 0) {
-      robots -= 1;
-      document.getElementById("robots").innerHTML = robots;
-    }
-  };
-
-  function anadirH() {
-    var nuevaTarea = document.createElement('li');
-    var newTarea = prompt("Nº de la tarea a añadir");
-    nuevaTarea.appendChild(document.createTextNode('Tarea ' + newTarea + ' ' + '-'.repeat(53)));
-    document.getElementById("myList").appendChild(nuevaTarea);
-  };
-
-  function eliminarH() {
-    const list = document.getElementById("myList");
-    list.removeChild(list.lastChild);
-  };
-
-  function onLoadFunctions() {
-    for (let i = 1; i < 13; i++) {
-      var nuevaTarea = document.createElement('li');
-      var newTarea = i
-      nuevaTarea.appendChild(document.createTextNode('Tarea ' + newTarea + ' ' + '-'.repeat(53)));
-      document.querySelector('ul').appendChild(nuevaTarea);
-    }
-
-  }
-  window.onload = onLoadFunctions;
-
-</script> -->
-<!--  -->
-  <a style="float:right" href="index.html">Cerrar sesión</a>
+  <h1 class="Copper">Tareas</h1>
   <center>
-    <h1 class="principal"> Vista de técnico Artemisa</h1>
-  </center>
 
+    <table>
+      <tr>
+          <th> Tarea</th>
+          <th> Id </th>
+          <th> Modificar </th>
+  
+      </tr>
+      {% for task in tasks %}
+        {% if task.id!=1 %}
+          <tr>
+            <td> {{ task.content }}</td> 
+            <td> {{ task.id }} </td>
+            <td> <button type="button" class="button3" onClick="window.location.href='/update/{{ task.id }}';">🛠️</button> </td>
+         
+          </tr>
+        {% endif %}
+      {% endfor %}
+      </table>
+
+  </center>
+</div>
+
+<div class="inline-div-izquierda2">
+  <br> <br> <br> <br> <br>
+  &nbsp;
+  <button type="button" class="button3" onClick="window.location.href='/new_update/{{ tasks[-1].id }}';">+</button>
+  <button type="button" class="button4" onClick="window.location.href='/delete';">-</button>
+
+ <br> &nbsp;
+  Tareas:
+  <a id="clicks">{{ tasks[-1].id }}</a> <br>
+</div>
+
+<center>
   <div class="inline-div-izquierda">
+    <h1 class="Copper"> Robots</h1>
 
-    <h1 class="Copper">Tareas</h1>
-    <center>
 
-      <table>
-        <tr>
-            <th> Tarea</th>
-            <th> Id </th>
-            <th> Modificar </th>
-    
-        </tr>
-        {% for task in tasks %}
-          {% if task.id!=1 %}
-            <tr>
-              <td> {{ task.content }}</td> 
-              <td> {{ task.id }} </td>
-              <td> <button type="button" class="button3" onClick="window.location.href='/update/{{ task.id }}';">🛠️</button> </td>
-           
-            </tr>
-          {% endif %}
-        {% endfor %}
-        </table>
+    &nbsp; &nbsp; &nbsp; Robot 1 ------------------------------------------------------<br>
 
-    </center>
+    &nbsp; &nbsp; &nbsp; Robot 2 ------------------------------------------------------<br>
+
+    &nbsp; &nbsp; &nbsp; Robot 3 ------------------------------------------------------<br>
+
+    &nbsp; &nbsp; &nbsp; Robot 4 ------------------------------------------------------ <br>
+
+    &nbsp; &nbsp; &nbsp; Robot 5 ------------------------------------------------------ <br>
+
   </div>
 
-  <div class="inline-div-izquierda2">
-    <br> <br> <br> <br> <br>
-    &nbsp;
-    <button type="button" class="button3" onClick="window.location.href='/new_update/{{ tasks[-1].id }}';">+</button>
-    <button type="button" class="button4" onClick="window.location.href='/delete';">-</button>
-    <!-- <form action="/Interfaz_tecnico.html" method="POST">
-      <input type="submit" class="button3" value="+">
-    </form> -->
+  <br>
+  <br>
 
-   <br> &nbsp;
-    Tareas:
-    <a id="clicks">{{ tasks[-1].id }}</a> <br>
-  </div>
-
-  <center>
-    <div class="inline-div-izquierda">
-      <h1 class="Copper"> Robots</h1>
+</center>
 
 
-      &nbsp; &nbsp; &nbsp; Robot 1 ------------------------------------------------------<br>
-
-      &nbsp; &nbsp; &nbsp; Robot 2 ------------------------------------------------------<br>
-
-      &nbsp; &nbsp; &nbsp; Robot 3 ------------------------------------------------------<br>
-
-      &nbsp; &nbsp; &nbsp; Robot 4 ------------------------------------------------------ <br>
-
-      &nbsp; &nbsp; &nbsp; Robot 5 ------------------------------------------------------ <br>
-
-    </div>
-
-    <br>
-    <br>
-
-  </center>
-
-
-  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-  <center>
-    <button id="boton2" class="button2" onclick="window.location.href='Interfaz_tecnico.html';">Reset</button>
-  </center>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<center>
+  <button id="boton2" class="button2" onclick="window.location.href='Interfaz_tecnico.html';">Reset</button>
+</center>
 
   {% endblock %}
