@@ -26,17 +26,22 @@
                 <tr>
                     <th> Tarea</th>
                     <th>Atributos</th>
+                    <th>Asignar</th>
+                    
             
                 </tr>
-                {% for task in tasks %} 
+                {% for tarea in tareas %} 
                 <tr>
-                     <td> {{ task.content }}</td> 
+                     <td> {{ tarea.content }}</td> 
                      <td>
-                        {% for atributo in atributos %}
-                        <li>{{ task.nombre }}</li>
-                        {% endfor %}
+                       atributos
+                    </td>
+                    <td>
+                        atributos
                     </td> 
-                   
+                    <td>
+                        <button type="button" class="button3" onClick="window.location.href='tareas_encargado/{{tarea.id}}';">+</button>
+                    </td>
                 </tr>
                 {% endfor %}
                 </table>
@@ -46,14 +51,14 @@
 
     <div class="inline-div-izquierda2">
         <br> <br> <br> <br> <br>
-        <button type="button" class="button3" onClick="anadir()">+</button>
+        <button type="button" class="button3" onClick="window.location.href='tareas_encargado/{{tarea.id}}';">+</button>
 
 
     </div>
 
     <center>
         <div class="inline-div-izquierda">
-            <h1 class="Copper"> Tareas asignadas</h1>
+            <h1 class="Copper">Tareas asignadas</h1>
 
             <ul id="myList">
             </ul>
