@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title> Crear una tarea </title>
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    {% endblock %}
+
+    {% block body %}
+
+
+<body>
+    <center>
+        <h1 class="principal"> Formulario para asignar una tarea</h1>
+
+
+
+        <div class="acceso">
+
+            <form method="POST">
+
+                <p>
+                    Nombre de la tarea:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="nombre" size="45"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
+
+                <p>
+                    Atributo:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="atributos" size="45">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" class="buttonAnadirTarea2" value="Añadir atributo">
+                </p>
+
+            
+
+                <p>
+                    <input type="submit" class="button2" value="Asignar tarea">
+                </p>
+
+                <button type="button" class="buttonAnadirTarea" onClick="window.location.href='interfaz_encargado.html';">Cancelar</button>
+
+            </form>
+        </div>
+    </center>
+    {% endblock %}

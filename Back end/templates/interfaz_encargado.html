@@ -26,30 +26,27 @@
                 <tr>
                     <th> Tarea</th>
                     <th>Atributos</th>
+                    <th>Asignar tarea</th>
             
                 </tr>
                 {% for task in tasks %} 
                 <tr>
                      <td> {{ task.content }}</td> 
                      <td>
-                        {% for atributo in atributos %}
-                        <li>{{ task.nombre }}</li>
-                        {% endfor %}
+                        atributos
+                    </td> 
+                    <td>
+                        <button type="button" class="button3" onClick="window.location.href='asignar_tarea.html';">+</button>
                     </td> 
                    
                 </tr>
                 {% endfor %}
-                </table>
+            </table>
 
         </center>
     </div>
 
-    <div class="inline-div-izquierda2">
-        <br> <br> <br> <br> <br>
-        <button type="button" class="button3" onClick="anadir()">+</button>
 
-
-    </div>
 
     <center>
         <div class="inline-div-izquierda">
