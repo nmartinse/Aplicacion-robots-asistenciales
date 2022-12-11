@@ -75,16 +75,34 @@
     <h1 class="Copper">Tareas</h1>
     <center>
 
-      <ul id="myList">
-      </ul>
+      <table>
+        <tr>
+            <th> Tarea</th>
+            <th> Id </th>
+    
+        </tr>
+        {% for task in tasks %} 
+        <tr>
+             <td> {{ task.content }}</td> 
+             <td> {{ task.id }} </td> 
+           
+        </tr>
+        {% endfor %}
+        </table>
 
     </center>
   </div>
 
   <div class="inline-div-izquierda2">
     <br> <br> <br> <br> <br>
-    <button type="button" class="button3" onClick="window.location.href='interfaz_tareas.html';">+</button>
-    <button type="button" class="button4" onClick="">-</button> <br>
+    <!-- <button type="button" class="button3" onClick="window.location.href='interfaz_tareas.html';">+</button> -->
+    <form action="/Interfaz_tecnico.html" method="POST">
+      <input type="submit" class="button3" value="+">
+    </form>
+    <form action="/delete" method="GET">
+      <input type="submit" class="button4" value="-">
+    </form>
+   <br>
     Tareas:
     <a id="clicks">12</a> <br>
   </div>
