@@ -109,7 +109,7 @@
 
                 <p>
                     Nombre de la tarea:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="nombre" size="45"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="nombre" size="45" value="Tarea sin definir"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
 
                 <p>
@@ -120,14 +120,15 @@
 
                 <p>
                     Descripción:<br>
-                    <textarea name="descripcion" rows="10" cols="50"></textarea>
+                    <textarea name="descripcion" rows="10" cols="50">Descripcion de la tarea</textarea>
                 </p>
 
                 <p>
-                    <input type="submit" class="button2" value="Crear tarea">
+                    <input type="submit" class="button2" id="nombre" value="Crear tarea">
+                    
                 </p>
 
-                <button type="button" class="buttonAnadirTarea" onClick="window.location.href='Interfaz_tecnico.html';">Cancelar</button>
+                <button type="submit" class="buttonAnadirTarea" onClick="window.location.href='Interfaz_tecnico.html';">Cancelar</button>
 
             </form>
         </div>

@@ -29,17 +29,19 @@
                     <th>Asignar tarea</th>
             
                 </tr>
-                {% for task in tasks %} 
-                <tr>
-                     <td> {{ task.content }}</td> 
-                     <td>
-                        atributos
-                    </td> 
-                    <td>
-                        <button type="button" class="button3" onClick="window.location.href='/asignar/{{task.id}}';">+</button>
-                    </td> 
+                {% for task in tasks %}
+                    {% if task.id!=1 %}
+                            <tr>
+                            <td> {{ task.content }}</td> 
+                            <td>
+                                atributos
+                            </td> 
+                            <td>
+                                <button type="button" class="button3" onClick="window.location.href='/asignar/{{task.id}}';">+</button>
+                            </td> 
                    
-                </tr>
+                        </tr>
+                    {% endif %}
                 {% endfor %}
             </table>
 

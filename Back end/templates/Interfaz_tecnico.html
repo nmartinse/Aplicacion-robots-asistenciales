@@ -79,14 +79,18 @@
         <tr>
             <th> Tarea</th>
             <th> Id </th>
+            <th> Modificar </th>
     
         </tr>
-        {% for task in tasks %} 
-        <tr>
-             <td> {{ task.content }}</td> 
-             <td> {{ task.id }} </td> 
+        {% for task in tasks %}
+          {% if task.id!=1 %}
+            <tr>
+              <td> {{ task.content }}</td> 
+              <td> {{ task.id }} </td>
+              <td> <button type="button" class="button3" onClick="window.location.href='/update/{{ task.id }}';">🛠️</button> </td>
            
-        </tr>
+            </tr>
+          {% endif %}
         {% endfor %}
         </table>
 
@@ -95,16 +99,16 @@
 
   <div class="inline-div-izquierda2">
     <br> <br> <br> <br> <br>
-    <!-- <button type="button" class="button3" onClick="window.location.href='interfaz_tareas.html';">+</button> -->
-    <form action="/Interfaz_tecnico.html" method="POST">
+    &nbsp;
+    <button type="button" class="button3" onClick="window.location.href='/new_update/{{ tasks[-1].id }}';">+</button>
+    <button type="button" class="button4" onClick="window.location.href='/delete';">-</button>
+    <!-- <form action="/Interfaz_tecnico.html" method="POST">
       <input type="submit" class="button3" value="+">
-    </form>
-    <form action="/delete" method="GET">
-      <input type="submit" class="button4" value="-">
-    </form>
-   <br>
+    </form> -->
+
+   <br> &nbsp;
     Tareas:
-    <a id="clicks">12</a> <br>
+    <a id="clicks">{{ tasks[-1].id }}</a> <br>
   </div>
 
   <center>

@@ -29,42 +29,64 @@ def index_alt():
 
 @app.route('/Interfaz_tecnico.html', methods=['POST','GET'])     # Redireccion a Tecnico
 def tecnico():
-    if request.method == 'POST':
-        task_content = "Prueba de texto"
-        new_task = Todo(content=task_content)
+    tasks = Todo.query.order_by(Todo.id).all() # Este método nos devuelve todos los elementos de la tabla de la base de datos
+    return render_template('Interfaz_tecnico.html', tasks=tasks) # Presentar las tareas
+    # if request.method == 'POST':
+    #     task_content = "Prueba de texto"
+    #     new_task = Todo(content=task_content)
 
-        try:
-            db.session.add(new_task)
-            db.session.commit()
-            return redirect('/Interfaz_tecnico.html')
+    #     try:
+    #         db.session.add(new_task)
+    #         db.session.commit()
+    #         return redirect('/Interfaz_tecnico.html')
         
-        except:
-            return "Problem while insereting in the DB"
-    else:
-        tasks = Todo.query.order_by(Todo.id).all() # Este método nos devuelve todos los elementos de la tabla de la base de datos
-        return render_template('Interfaz_tecnico.html', tasks=tasks) # Presentar las tareas
+    #     except:
+    #         return "Problem while insereting in the DB"
+    # else:
+    #     tasks = Todo.query.order_by(Todo.id).all() # Este método nos devuelve todos los elementos de la tabla de la base de datos
+    #     return render_template('Interfaz_tecnico.html', tasks=tasks) # Presentar las tareas
 
 
 @app.route('/delete')
 def delete():
     tasks = Todo.query.order_by(Todo.id).all() # Todas las tareas
     id= tasks[-1].id                           # La ultima tarea
-    
-    task_to_delete = Todo.query.get_or_404(id)
 
-    try:
-        db.session.delete(task_to_delete)
-        db.session.commit()
-        return redirect('/Interfaz_tecnico.html')
-    except:
-        return "Error while deleting the task" + id
+    if(id > 1):
+        task_to_delete = Todo.query.get_or_404(id)
+
+        try:
+            db.session.delete(task_to_delete)
+            db.session.commit()
+            return redirect('/Interfaz_tecnico.html')
+        except:
+            return "Error while deleting the task" + id
+    return redirect('/Interfaz_tecnico.html')
 
 @app.route('/update/<int:id>', methods=['POST','GET'])      # Redireccion a formulario tareas
-def tareas(id):
+def update_tarea(id):
+        
+    task = Todo.query.get_or_404(id)
+    if request.method == 'POST':
+        try:
+            task.content = request.form['nombre']
+            db.session.commit()
+            return redirect('/Interfaz_tecnico.html')
+        except:
+            return "There was an issue when updating the task " + id
+    else:
+        return render_template('interfaz_tareas.html', task=task)
+
+@app.route('/new_update/<int:id>', methods=['POST','GET'])      # Redireccion a formulario tareas
+def new_tarea(id):
+        
     task = Todo.query.get_or_404(id)
     if request.method == 'POST':
 
         try:
+            task_content = request.form['nombre']
+            new_task = Todo(content=task_content)
+            db.session.add(new_task)
             db.session.commit()
             return redirect('/Interfaz_tecnico.html')
         except:
