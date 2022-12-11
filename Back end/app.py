@@ -11,7 +11,7 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
     completed = db.Column(db.Integer, default=0)
-    priority = db.Column(db.Integer, default=0)
+    priority = db.Column(db.Integer, default=0)         # Nueva tabla
 
     def __repr__(self):
         return '<Task %r' % self.id
@@ -25,42 +25,58 @@ def index():
 def index_alt():
     return render_template('index.html') # Renderizar index.html
 
-@app.route('/delete/<int:id>')
-def delete(id):
+#---------------------------------------------------------------------------------------------------------#
+
+@app.route('/Interfaz_tecnico.html', methods=['POST','GET'])     # Redireccion a Tecnico
+def tecnico():
+    if request.method == 'POST':
+        task_content = "Prueba de texto"
+        new_task = Todo(content=task_content)
+
+        try:
+            db.session.add(new_task)
+            db.session.commit()
+            return redirect('/Interfaz_tecnico.html')
+        
+        except:
+            return "Problem while insereting in the DB"
+    else:
+        tasks = Todo.query.order_by(Todo.id).all() # Este método nos devuelve todos los elementos de la tabla de la base de datos
+        return render_template('Interfaz_tecnico.html', tasks=tasks) # Presentar las tareas
+
+
+@app.route('/delete')
+def delete():
+    tasks = Todo.query.order_by(Todo.id).all() # Todas las tareas
+    id= tasks[-1].id                           # La ultima tarea
+    
     task_to_delete = Todo.query.get_or_404(id)
 
     try:
         db.session.delete(task_to_delete)
         db.session.commit()
-        return redirect('/')
+        return redirect('/Interfaz_tecnico.html')
     except:
         return "Error while deleting the task" + id
 
-@app.route('/update/<int:id>', methods=['POST','GET'])
-def update(id):
+@app.route('/update/<int:id>', methods=['POST','GET'])      # Redireccion a formulario tareas
+def tareas(id):
     task = Todo.query.get_or_404(id)
     if request.method == 'POST':
-        task.content = request.form['content']
-        
+
         try:
             db.session.commit()
-            return redirect('/')
+            return redirect('/Interfaz_tecnico.html')
         except:
             return "There was an issue when updating the task " + id
     else:
-        return render_template('update.html', task=task)
+        return render_template('interfaz_tareas.html', task=task)
+    
 
-@app.route('/Interfaz_tecnico.html', methods=['POST','GET'])   # Redireccion a Tecnico
-def tecnico():
-    return render_template('Interfaz_tecnico.html')
 
 @app.route('/interfaz_encargado.html', methods=['POST','GET'])   # Redireccion a Encargado
 def encargado():
     return render_template('interfaz_encargado.html')
-
-@app.route('/interfaz_tareas.html', methods=['POST','GET'])   # Redireccion a formulario tareas
-def tareas():
-    return render_template('interfaz_tareas.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
