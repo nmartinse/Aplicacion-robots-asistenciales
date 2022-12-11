@@ -79,9 +79,9 @@ def encargado():
     tasks = Todo.query.order_by(Todo.id).all() # tareas ordenadas por id
     return render_template('interfaz_encargado.html', tasks=tasks)
 
-@app.route('/asignar_tarea.html', methods=['POST','GET'])
-def asignar_tarea():
-    return render_template('asignar_tarea.html')
+# @app.route('/asignar_tarea.html', methods=['POST','GET'])
+# def asignar_tarea():
+#      return render_template('asignar_tarea.html')
 
 @app.route('/asignar/<int:id>', methods=['POST','GET'])      # Redireccion a formulario asignar tareas
 def asignar(id):
