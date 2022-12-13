@@ -149,7 +149,7 @@ def asignar(id):
         except:
             return "There was an issue when updating the task " + id
     else:
-        return render_template('asignar_tarea.html', task=task)
+        return render_template('/asignar_tarea.html', task=task)
 
 if __name__ == "__main__":
     app.run(debug=True)
