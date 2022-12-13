@@ -60,18 +60,31 @@
   <div class="inline-div-derecha">
     <h1 class="Copper"> Robots</h1>
 
+    <button type="button" class="button3" onClick="window.location.href='/nuevo_robot';">+</button>
+    <button type="button" class="button4" onClick="window.location.href='/delete_robot';">-</button>
 
-    &nbsp; &nbsp; &nbsp; Robot 1 ------------------------------------------------------<br>
+    <br>
 
-    &nbsp; &nbsp; &nbsp; Robot 2 ------------------------------------------------------<br>
+    <table>
+      <tr>
+          <th> Robot</th>
+          <th> Id </th>
+  
+      </tr>
+      {% for robot in rob %}
+          <tr>
+            <td> {{ robot.nombre }}</td> 
+            <td> {{ robot.id }} </td>
+         
+          </tr>
+      {% endfor %}
+      </table>
 
-    &nbsp; &nbsp; &nbsp; Robot 3 ------------------------------------------------------<br>
-
-    &nbsp; &nbsp; &nbsp; Robot 4 ------------------------------------------------------ <br>
-
-    &nbsp; &nbsp; &nbsp; Robot 5 ------------------------------------------------------ <br>
 
   </div>
+
+  
+ 
 
   <br>
   <br>

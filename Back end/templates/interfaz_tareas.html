@@ -114,8 +114,8 @@
 
                 <p>
                     Atributo:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="atributos" size="45">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="submit" class="buttonAnadirTarea2" value="Añadir atributo">
+                    <input type="text" name="atributos" id="atributos" size="45"value="{{ task.atributos }}">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" class="buttonAnadirTarea2" value="Añadir atributo" onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+' 1234')">
                 </p>
 
                 <p>
