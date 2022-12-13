@@ -75,6 +75,25 @@ def delete():
             return "Error while deleting the task" + id
     return redirect('/Interfaz_tecnico.html')
 
+@app.route('/reset')
+def reset():
+    tasks = Todo.query.order_by(Todo.id).all() # Todas las tareas
+    id= tasks[-1].id                           # La ultima tarea
+
+    if(id > 1):
+        for idx in range(2,id+1):
+            task_to_delete = Todo.query.get_or_404(idx)
+            try:
+                db.session.delete(task_to_delete)
+                db.session.commit()
+            except:
+                return "Error while deleting the task" + idx
+        return redirect('/Interfaz_tecnico.html')
+
+    return redirect('/Interfaz_tecnico.html')
+
+
+
 @app.route('/update/<int:id>', methods=['POST','GET'])      # Redireccion a formulario tareas
 def update_tarea(id):
         

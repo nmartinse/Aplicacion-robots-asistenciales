@@ -89,21 +89,6 @@ h1.principal {
     transform: translateY(4px);
 }
 
-.inline-div-derecha {
-    width: 50%;
-    float: right;
-}
-
-.inline-div-izquierda {
-    width: 500px;
-    float: left;
-}
-
-.inline-div-izquierda2 {
-    width: 72px;
-    float: left;
-}
-
 .button3 {
     width: 25px;
     height: 25px;
@@ -126,6 +111,50 @@ h1.principal {
 
 .button4:hover {
     background-color: #ff4646
+}
+
+.button5 {
+    width: 20%;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+    right: 600px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #aa9f04;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+
+.button5:hover {
+    background-color: #8a8e3e
+}
+
+
+.button5:active {
+    background-color: #8b8e3e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.inline-div-derecha {
+    width: 50%;
+    float: right;
+}
+
+.inline-div-izquierda {
+    width: 500px;
+    float: left;
+}
+
+.inline-div-izquierda2 {
+    width: 72px;
+    float: left;
 }
 
 .buttonAnadirTarea {
