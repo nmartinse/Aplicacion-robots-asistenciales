@@ -7,10 +7,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' # 3 barras porque es
 with app.app_context():
     db = SQLAlchemy(app)
 
-class Todo(db.Model):
+class Todo(db.Model): #Tabla para tareas creadas
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
-    priority = db.Column(db.Integer, default=0)         # Nueva tabla
+    priority = db.Column(db.String(200))        # prioridad
     descripcion = db.Column(db.String(200))             # Descripcion
     atributos = db.Column(db.String(800))               # Atributos
 
@@ -22,7 +22,7 @@ class InstanciaTarea(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
     completed = db.Column(db.Integer, default=0)
-    priority = db.Column(db.Integer, default=0)         # Nueva tabla
+    priority = db.Column(db.String(200))       # prioridad
     atributos_asignados = db.Column(db.String(800))
 
 
@@ -118,6 +118,7 @@ def update_tarea(id):
         try:
             task.content = request.form['nombre']
             task.descripcion = request.form['descripcion']
+            task.priority=request.form['prioridad']
             task.atributos = request.form['atributos']
             db.session.commit()
             return redirect('/Interfaz_tecnico.html')
@@ -135,8 +136,9 @@ def new_tarea(id):
         try:
             task_content = request.form['nombre']
             task_descrip = request.form['descripcion']
+            task_priority=request.form['prioridad']
             task_atribut = request.form['atributos']
-            new_task = Todo(content=task_content, descripcion=task_descrip, atributos=task_atribut)
+            new_task = Todo(content=task_content, descripcion=task_descrip, priority=task_priority, atributos=task_atribut)
             db.session.add(new_task)
             db.session.commit()
             return redirect('/Interfaz_tecnico.html')
