@@ -161,6 +161,7 @@ def encargado():
 @app.route('/asignar/<int:id>', methods=['POST','GET'])      # Redireccion a formulario asignar tareas
 def asignar(id):
     task = Todo.query.get_or_404(id)
+    rob = Robo.query.order_by(Robo.id).all() # Todas las tareas
     if request.method == 'POST':
 
         try:
@@ -169,7 +170,7 @@ def asignar(id):
         except:
             return "There was an issue when updating the task " + id
     else:
-        return render_template('/asignar_tarea.html', task=task)
+        return render_template('/asignar_tarea.html', task=task, rob=rob)
 
 
 @app.route('/nuevo_robot')

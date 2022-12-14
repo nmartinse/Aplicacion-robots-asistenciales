@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <title> Crear una tarea </title>
+<title> Crear una tarea </title>
 
-    <link rel="shortcut icon" type="image/x-icon"
-        href="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png" />
+<link rel="shortcut icon" type="image/x-icon"
+    href="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-    {% endblock %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+{% endblock %}
 
-    {% block body %}
+{% block body %}
 
 
 <body>
@@ -21,25 +21,45 @@
         <div class="acceso">
 
             <form action="/asignar/{{ task.id }}" method="POST">
-                
+
 
                 <p>
                     Nombre de la tarea:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="nombre" size="45" value="{{ task.content }}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="nombre" size="45" value="{{ task.content }}">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
                 <!-- Cambiar a lista dinámica leida de la tarea creada por el técnico -->
                 <p>
-                    Atributos:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="atributos" size="45" value="{{ task.atributos }}" readonly="readonly">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Atributos:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="atributos" size="45" value="{{ task.atributos }}" readonly="readonly">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
 
-            
+
+                <script>
+                    getElementById('atributos').getAttribute('value')
+                    cadena.split([","])
+                </script>
+                
+
+
+                {% for robot in rob %}
+                {{ robot.nombre }}
+                <input type="text" name="atributos" size="45" value="{{ task.atributos}}">
+                <br>
+                {% endfor %}
+
+
 
                 <p>
                     <input type="submit" class="button2" value="Asignar tarea">
                 </p>
 
-                <button type="button" class="buttonAnadirTarea" onClick="window.location.href='/interfaz_encargado.html';">Cancelar</button>
+                <button type="button" class="buttonAnadirTarea"
+                    onClick="window.location.href='/interfaz_encargado.html';">Cancelar</button>
 
             </form>
         </div>

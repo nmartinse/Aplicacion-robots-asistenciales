@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <title> Crear una tarea </title>
+<title> Crear una tarea </title>
 
-    <link rel="shortcut icon" type="image/x-icon"
-        href="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png" />
+<link rel="shortcut icon" type="image/x-icon"
+    href="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Logo.png" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-    {% endblock %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+{% endblock %}
 
-    {% block body %}
+{% block body %}
 
 
 <body>
@@ -24,26 +24,49 @@
 
                 <p>
                     Nombre de la tarea:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="nombre" size="45" value="{{ task.content }}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="nombre" size="45" value="{{ task.content }}">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
                 <p>
                     Prioridad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="prioridad"  size="45" value="{{ task.priority }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="prioridad" size="45"
+                        value="{{ task.priority }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
 
                 <p>
-                    Atributos:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="atributos" id="atributos" size="45"value="{{ task.atributos }}" readonly="readonly">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    
+                    Atributos:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="atributos" id="atributos" size="45" value="{{ task.atributos }}"
+                        readonly="readonly"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                 </p>
                 <p>
                     Nombre Atributo:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="n_atributo" id="n_atributo" size="45" value="">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    
-                   
+                    <input type="text" name="n_atributo" id="n_atributo" size="45" value="">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
                 </p>
+                <script>
+                    function anadiratributo() {
+                        // if(getElementById('atributos').getAttribute('value'))
+                        // {
+                        //     getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+getElementById('n_atributo').value);
+                        // }
+                        // else
+                        // {
+                        //     getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);
+                        // }
+                        getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);
+                    }
+                </script>
                 <p>
-                    <input type="button" class="buttonAnadirTarea2" value="Añadir atributo" onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value)">
+                    <input type="button" class="buttonAnadirTarea2" value="Añadir atributo"
+                        onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);">
                 </p>
 
 
@@ -54,10 +77,11 @@
 
                 <p>
                     <input type="submit" class="button2" value="Modificar tarea">
-                    
+
                 </p>
 
-                <button type="submit" class="buttonAnadirTarea" onClick="window.location.href='Interfaz_tecnico.html';">Cancelar</button>
+                <button type="submit" class="buttonAnadirTarea"
+                    onClick="window.location.href='Interfaz_tecnico.html';">Cancelar</button>
 
             </form>
         </div>
