@@ -39,16 +39,16 @@
                 </p>
 
 
-                <script>
+                <!-- <script>
                     getElementById('atributos').getAttribute('value')
                     cadena.split([","])
-                </script>
+                </script> -->
                 
 
 
-                {% for robot in rob %}
-                {{ robot.nombre }}
-                <input type="text" name="atributos" size="45" value="{{ task.atributos}}">
+                {% for atr in taskinfo %}
+                {{ atr }}
+                <input type="text" name="atributos" size="45" value="{{ taskinfo }}">
                 <br>
                 {% endfor %}
 
