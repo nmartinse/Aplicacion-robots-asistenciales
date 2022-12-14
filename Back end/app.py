@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+import random
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' # 3 barras porque es un path relativo. Si fuera absoluto, serían 4 barras
@@ -176,7 +176,8 @@ def asignar(id):
 def nuevo_robot():
     rob = Robo.query.order_by(Robo.id).all() # Todas las tareas
     
-    new_rob = Robo(nombre="Wally")
+    nombres_de_robots = ["Wally","Radion","NetBot","Roomba","Solac","Roborock"]
+    new_rob = Robo(nombre=random.choice(nombres_de_robots))
     try:
         db.session.add(new_rob)
         db.session.commit()
