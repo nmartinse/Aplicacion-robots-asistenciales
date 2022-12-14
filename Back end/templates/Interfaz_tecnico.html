@@ -36,7 +36,7 @@
         {% if task.id!=1 %}
           <tr>
             <td> {{ task.content }}</td> 
-            <td> {{ task.id }} </td>
+            <td> {{ task.id - 1 }} </td>
             <td> <button type="button" class="button3" onClick="window.location.href='/update/{{ task.id }}';">🛠️</button> </td>
          
           </tr>
@@ -76,11 +76,13 @@
         </tr>
       </thead>
       {% for robot in rob %}
+      {% if robot.id!=1 %}
           <tr>
             <td> {{ robot.nombre }}</td> 
-            <td> {{ robot.id }} </td>
+            <td> {{ robot.id - 1 }} </td>
          
           </tr>
+        {% endif %}
       {% endfor %}
       </table>
 

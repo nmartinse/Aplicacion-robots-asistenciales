@@ -96,6 +96,9 @@ def reset():
     tasks = Todo.query.order_by(Todo.id).all() # Todas las tareas
     id= tasks[-1].id                           # La ultima tarea
 
+    rob = Robo.query.order_by(Robo.id).all() # Todos los robots
+    idr = rob[-1].id 
+
     if(id > 1):
         for idx in range(2,id+1):
             task_to_delete = Todo.query.get_or_404(idx)
@@ -104,7 +107,14 @@ def reset():
                 db.session.commit()
             except:
                 return "Error while deleting the task" + idx
-        return redirect('/Interfaz_tecnico.html')
+    
+    for idx in range(2,idr+1):
+        task_to_delete = Robo.query.get_or_404(idx)
+        try:
+            db.session.delete(task_to_delete)
+            db.session.commit()
+        except:
+            return "Error while deleting the task" + idx
 
     return redirect('/Interfaz_tecnico.html')
 
@@ -182,7 +192,7 @@ def asignar(id):
 
 @app.route('/nuevo_robot')
 def nuevo_robot():
-    rob = Robo.query.order_by(Robo.id).all() # Todas las tareas
+    rob = Robo.query.order_by(Robo.id).all() # Todos los robots
     
     nombres_de_robots = ["Wally","Radion","NetBot","Roomba","Solac","Roborock"]
     new_rob = Robo(nombre=random.choice(nombres_de_robots))

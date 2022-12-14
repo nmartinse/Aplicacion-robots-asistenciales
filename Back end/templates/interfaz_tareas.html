@@ -13,6 +13,7 @@
     <h1 class="principal" style="text-align:center"> Formulario para modificar una tarea</h1>
 
 
+<<<<<<< HEAD
     <div class="acceso">
 
         <form method="post">
@@ -27,6 +28,12 @@
                 <input type="text" name="prioridad" size="45"
                     value="{{ task.priority }}">
             </p>
+=======
+<body>
+    <center>
+        <h1 class="principal"> Formulario para modificar una tarea</h1>
+    </center>
+>>>>>>> bf077e05798866d77befd4a3165066f21f96a3f2
 
             <p>
                 <h3 style="text-align:center">Atributos</h3>
@@ -35,6 +42,7 @@
                         readonly="readonly">
                 
 
+<<<<<<< HEAD
             </p>
             <p>
                 Nombre Atributo:
@@ -77,4 +85,62 @@
         </form>
     </div>
 
+=======
+            <form method="post">
+
+                <p>
+                    &nbsp; &nbsp; &nbsp; &nbsp; Nombre de la tarea:
+                    <input type="text" name="nombre" size="45" value="{{ task.content }}">
+                </p>
+
+
+                <p>
+                    &nbsp; &nbsp; &nbsp; &nbsp; Prioridad: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <input type="text" name="prioridad" size="45" value="{{ task.priority }}">
+                </p>
+
+                <p>
+                    &nbsp; &nbsp; &nbsp; &nbsp; Atributos: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <input type="text" name="atributos" id="atributos" size="45" value="{{ task.atributos }}" readonly="readonly">
+                </p>
+
+                <p>
+                    &nbsp; &nbsp; &nbsp; &nbsp; Nombre Atributo: &nbsp; &nbsp;
+                    <input type="text" name="n_atributo" id="n_atributo" size="45" value=""> &nbsp; &nbsp;
+                    <input type="button" class="buttonAnadirTarea2" value="Añadir atributo" onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);">
+                </p>
+
+                <!-- <script>
+                    function anadiratributo() {
+                        // if(getElementById('atributos').getAttribute('value'))
+                        // {
+                        //     getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+getElementById('n_atributo').value);
+                        // }
+                        // else
+                        // {
+                        //     getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);
+                        // }
+                        getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);
+                    }
+                </script> -->
+
+                <p>
+                    <center>
+                        Descripción:<br>
+                        <textarea name="descripcion" rows="10" cols="50">{{ task.descripcion }}</textarea>
+                    </center>
+                </p>
+
+                <p>
+                    <input type="submit" class="button2" value="Modificar tarea">
+                </p>
+
+                <center>
+                    <button type="submit" class="buttonAnadirTarea" onClick="window.location.href='Interfaz_tecnico.html';">Cancelar</button>
+                </center>
+            </form>
+        </div>
+
+    <!-- </center> -->
+>>>>>>> bf077e05798866d77befd4a3165066f21f96a3f2
     {% endblock %}
