@@ -72,11 +72,13 @@
   
       </tr>
       {% for robot in rob %}
+      {% if robot.id!=1 %}
           <tr>
             <td> {{ robot.nombre }}</td> 
             <td> {{ robot.id }} </td>
          
           </tr>
+        {% endif %}
       {% endfor %}
       </table>
 

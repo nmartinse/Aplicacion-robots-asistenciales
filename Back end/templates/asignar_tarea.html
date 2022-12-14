@@ -15,7 +15,7 @@
 <body>
     <center>
         <h1 class="principal"> Formulario para asignar una tarea</h1>
-
+    </center>
 
 
         <div class="acceso">
@@ -24,18 +24,14 @@
 
 
                 <p>
-                    Nombre de la tarea:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Nombre de la tarea: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="text" name="nombre" size="45" value="{{ task.content }}">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
+
                 <!-- Cambiar a lista dinámica leida de la tarea creada por el técnico -->
                 <p>
-                    Atributos:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Atributos: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     <input type="text" name="atributos" size="45" value="{{ task.atributos }}" readonly="readonly">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
 
 
@@ -58,10 +54,12 @@
                     <input type="submit" class="button2" value="Asignar tarea">
                 </p>
 
-                <button type="button" class="buttonAnadirTarea"
-                    onClick="window.location.href='/interfaz_encargado.html';">Cancelar</button>
+                <center>
+                    <button type="button" class="buttonAnadirTarea" onClick="window.location.href='/interfaz_encargado.html';">Cancelar</button>
+                </center>
 
             </form>
         </div>
-    </center>
+        
+    <!-- </center> -->
     {% endblock %}

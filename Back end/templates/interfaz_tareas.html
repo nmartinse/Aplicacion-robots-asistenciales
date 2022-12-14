@@ -15,43 +15,35 @@
 <body>
     <center>
         <h1 class="principal"> Formulario para modificar una tarea</h1>
-
-
+    </center>
 
         <div class="acceso">
 
             <form method="post">
 
                 <p>
-                    Nombre de la tarea:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; Nombre de la tarea:
                     <input type="text" name="nombre" size="45" value="{{ task.content }}">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
+
+
                 <p>
-                    Prioridad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="prioridad" size="45"
-                        value="{{ task.priority }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; Prioridad: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <input type="text" name="prioridad" size="45" value="{{ task.priority }}">
                 </p>
 
                 <p>
-                    Atributos:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="atributos" id="atributos" size="45" value="{{ task.atributos }}"
-                        readonly="readonly"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
+                    &nbsp; &nbsp; &nbsp; &nbsp; Atributos: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <input type="text" name="atributos" id="atributos" size="45" value="{{ task.atributos }}" readonly="readonly">
                 </p>
+
                 <p>
-                    Nombre Atributo:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="n_atributo" id="n_atributo" size="45" value="">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
+                    &nbsp; &nbsp; &nbsp; &nbsp; Nombre Atributo: &nbsp; &nbsp;
+                    <input type="text" name="n_atributo" id="n_atributo" size="45" value=""> &nbsp; &nbsp;
+                    <input type="button" class="buttonAnadirTarea2" value="Añadir atributo" onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);">
                 </p>
-                <script>
+
+                <!-- <script>
                     function anadiratributo() {
                         // if(getElementById('atributos').getAttribute('value'))
                         // {
@@ -63,27 +55,24 @@
                         // }
                         getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);
                     }
-                </script>
-                <p>
-                    <input type="button" class="buttonAnadirTarea2" value="Añadir atributo"
-                        onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);">
-                </p>
-
+                </script> -->
 
                 <p>
-                    Descripción:<br>
-                    <textarea name="descripcion" rows="10" cols="50">{{ task.descripcion }}</textarea>
+                    <center>
+                        Descripción:<br>
+                        <textarea name="descripcion" rows="10" cols="50">{{ task.descripcion }}</textarea>
+                    </center>
                 </p>
 
                 <p>
                     <input type="submit" class="button2" value="Modificar tarea">
-
                 </p>
 
-                <button type="submit" class="buttonAnadirTarea"
-                    onClick="window.location.href='Interfaz_tecnico.html';">Cancelar</button>
-
+                <center>
+                    <button type="submit" class="buttonAnadirTarea" onClick="window.location.href='Interfaz_tecnico.html';">Cancelar</button>
+                </center>
             </form>
         </div>
-    </center>
+
+    <!-- </center> -->
     {% endblock %}
