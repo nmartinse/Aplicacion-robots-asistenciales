@@ -10,7 +10,6 @@ with app.app_context():
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
-    completed = db.Column(db.Integer, default=0)
     priority = db.Column(db.Integer, default=0)         # Nueva tabla
     descripcion = db.Column(db.String(200))             # Descripcion
     atributos = db.Column(db.String(800))               # Atributos
@@ -18,6 +17,14 @@ class Todo(db.Model):
 class Robo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(200), nullable=False)
+
+class InstanciaTarea(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(200), nullable=False)
+    completed = db.Column(db.Integer, default=0)
+    priority = db.Column(db.Integer, default=0)         # Nueva tabla
+    atributos_asignados = db.Column(db.String(800))
+
 
 
 @app.route('/test', methods=['POST', 'GET']) ## Indica qué hacer cuando un usuario llega a la pagina principal
