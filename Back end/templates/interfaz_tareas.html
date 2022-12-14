@@ -11,91 +11,6 @@
 
     {% block body %}
 
-<!-- <style>
-    a:link {
-        text-decoration: none;
-        color: rgb(6, 50, 115);
-    }
-
-    a:visited {
-        text-decoration: none;
-        color: rgb(6, 50, 115);
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    a:active {
-        text-decoration: underline;
-    }
-
-    body {
-        background-color: #a1d8fb;
-    }
-
-    h1.Copper {
-        font-family: Copperplate, Papyrus, fantasy;
-        text-align: center
-    }
-
-    h1.principal {
-        font-family: "Audiowide", sans-serif;
-        color: rgb(6, 50, 115);
-    }
-
-    .inline-div {
-        margin-left: 30%;
-    }
-
-    div.acceso {
-        border: 2px solid rgb(33, 103, 144);
-        border-radius: 5px;
-        padding: 5px;
-        margin-right: 300px;
-        margin-left: 300px;
-        background-color: rgb(255, 255, 255);
-    }
-
-    .button2 {
-        width: 20%;
-        height: 50px;
-        font-size: 24px;
-        text-align: center;
-        /* position: absolute;
-        bottom: 30px;
-        right: 600px; */
-        cursor: pointer;
-        outline: none;
-        color: #fff;
-        background-color: #0462aa;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #999;
-    }
-
-    .button2:hover {
-        background-color: #3e6f8e
-    }
-
-    .button3 {
-        width: 15%;
-        height: 25px;
-        font-size: 12px;
-        text-align: center;
-        cursor: pointer;
-        outline: none;
-        color: #fff;
-        background-color: #0462aa;
-        border: none;
-        border-radius: 15px;
-    }
-
-    .button3:hover {
-        background-color: #3e6f8e
-    }
-
-</style> -->
 
 <body>
     <center>
@@ -113,10 +28,16 @@
                 </p>
 
                 <p>
-                    Atributo:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Atributos:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="text" name="atributos" id="atributos" size="45"value="{{ task.atributos }}">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                </p>
+                <p>
+                    Nombre Atributo:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="atributo" size="45" value="Limpiar">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="button" class="buttonAnadirTarea2" value="Añadir atributo" onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+' 1234')">
                 </p>
+
 
                 <p>
                     Descripción:<br>
