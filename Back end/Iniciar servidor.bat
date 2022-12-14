@@ -1,4 +1,4 @@
-REM Ejecutable para activar el entorno en terminal de windows
+REM Ejecutable para iniciar el servidor en windows
 
 cd .env
 
