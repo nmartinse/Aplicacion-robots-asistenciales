@@ -10,6 +10,8 @@ cd ..
 
 cd ..
 
+start "" "URL del servidor (localhost).html"
+
 cls
 
 python app.py
