@@ -26,16 +26,20 @@
                 <tr>
                     <th> Tarea</th>
                     <th>Atributos</th>
+                    <th>Descripción</th>
                     <th>Asignar tarea</th>
             
                 </tr>
                 {% for task in tasks %}
-                    {% if task.id!=1 %}
+                    {% if task.id!=0 %}
                             <tr>
                             <td> {{ task.content }}</td> 
                             <td>
-                                atributos
+                                {{task.atributos}}
                             </td> 
+                            <td>
+                                {{task.descripcion}}
+                            </td>
                             <td>
                                 <button type="button" class="button3" onClick="window.location.href='/asignar/{{task.id}}';">+</button>
                             </td> 
