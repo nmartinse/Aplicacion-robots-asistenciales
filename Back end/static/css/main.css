@@ -30,6 +30,15 @@ h1.principal {
     color: rgb(6, 50, 115);
 }
 
+h3{
+    font-size: 17px; 
+    color: #0e0e0e;   
+}
+
+label{
+    display: block; 
+    float: center;  
+  }
 
 .button {
     width: 100%;
@@ -47,9 +56,9 @@ h1.principal {
 
   
 
-  .button:hover {
+.button:hover {
     background-color: #3e8e41
-  }
+}
 
  
 
@@ -158,20 +167,23 @@ h1.principal {
 }
 
 .buttonAnadirTarea {
-    width: 15%;
-    height: 25px;
-    font-size: 12px;
-    text-align: center;
+    height: 45px; 
+    padding-left: 5px;
+    padding-right: 5px;   
+    margin-bottom: 10px; 
+    margin-top: 10px;   
+    text-transform: uppercase;
+    border-style: solid; 
+    border-radius: 10px;  
+    width: 420px;   
     cursor: pointer;
-    outline: none;
     color: #fff;
     background-color: #0462aa;
     border: none;
-    border-radius: 15px;
 }
 
 .buttonAnadirTarea2 {
-    width: 15%;
+    width: 22%;
     height: 25px;
     font-size: 12px;
     text-align: center;
@@ -194,27 +206,73 @@ h1.principal {
 }
 
 div.acceso {
-    border: 2px solid rgb(33, 103, 144);
-    border-radius: 5px;
-    padding: 5px;
-    margin-right: 300px;
-    margin-left: 300px;
-    background-color: rgb(255, 255, 255);
+    width: 460px; 
+    height: auto;
+    margin: 80px auto;
+    border-radius: 10px;  
+    padding-top: 20px;
+    padding-bottom: 30px;  
+    background-color: #fbfbfb; 
+    padding-left: 30px; 
 }
+
+input{
+    background-color: #fbfbfb; 
+    width: 408px; 
+    height: 30px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #008cff; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 5px; 
+}
+
+textarea{
+    background-color: #fbfbfb; 
+    width: 405px; 
+    height: 150px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #008cff; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+    padding-top: 15px}
 
 ul {
     list-style-type: none;
 }
 
 table {
-    border: 2px solid rgb(18, 139, 219);
+    border: 2px solid rgb(140, 209, 255);
     border-collapse: collapse;
-    width: 100%;
-    text-align: center;
-    background-color: #ceecff;
+    width: 95%;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+thead tr {
+    background-color: #005ba0;
+    color: #ffffff;
+    text-align: left;
 }
 
 th, td {
-    border: 1px solid rgb(18, 139, 219);
-    
+    padding: 12px 15px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #005ba0;
 }

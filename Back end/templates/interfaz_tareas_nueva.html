@@ -14,7 +14,7 @@
 <body>
     <center>
         <h1 class="principal"> Formulario para crear una tarea</h1>
-
+    </center>
 
 
         <div class="acceso">
@@ -22,33 +22,31 @@
             <form method="post">
 
                 <p>
-                    Nombre de la tarea:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="nombre" size="45" value="Tarea sin definir"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Nombre de la tarea:
+                    <input type="text" name="nombre" size="45" value="Tarea sin definir"> 
                 </p>
                 <p>
-                    Prioridad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="prioridad" size="45" value="Prioridad sin definir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Prioridad:
+                    <input type="text" name="prioridad" size="45" value="Prioridad sin definir">
                 </p>
 
                 <p>
-                    Atributos:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="atributos" id="atributos" size="45" value="" readonly="readonly">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    
-                </p>
-                <p>
-                    Nombre Atributo:&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                    <input type="text" name="n_atributo" id="n_atributo" size="45" value="Suelo">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="button" class="buttonAnadirTarea2" value="Añadir atributo" onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value)">
+                    <h3 style="text-align:center">Atributos</h3>
+                    Nombre Atributo:
+                    <input type="text" name="n_atributo" id="n_atributo" size="45" value="Suelo">  
+                    <center>
+                        <input type="button" class="buttonAnadirTarea2" value="Añadir atributo" onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value)">
+                    </center>
                 </p>
 
 
                 <p>
-                    Descripción:<br>
+                    Descripción:
                     <textarea name="descripcion" rows="10" cols="50">Descripcion de la tarea</textarea>
                 </p>
 
                 <p>
-                    <input type="submit" class="button2" value="Crear tarea">
+                    <input type="submit" class="buttonAnadirTarea" value="Crear tarea">
                     
                 </p>
 
@@ -56,5 +54,5 @@
 
             </form>
         </div>
-    </center>
+    
     {% endblock %}

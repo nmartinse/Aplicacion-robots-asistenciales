@@ -24,12 +24,14 @@
   <center>
 
     <table>
-      <tr>
-          <th> Tarea</th>
-          <th> Id </th>
-          <th> Modificar </th>
-  
-      </tr>
+      <thead>
+        <tr>
+            <th> Tarea</th>
+            <th> Id </th>
+            <th> Modificar </th>
+        </tr>
+      </thead>
+
       {% for task in tasks %}
         {% if task.id!=1 %}
           <tr>
@@ -66,11 +68,13 @@
     <br>
 
     <table>
-      <tr>
-          <th> Robot</th>
-          <th> Id </th>
-  
-      </tr>
+      <thead>
+        <tr>
+            <th> Robot</th>
+            <th> Id </th>
+    
+        </tr>
+      </thead>
       {% for robot in rob %}
           <tr>
             <td> {{ robot.nombre }}</td> 

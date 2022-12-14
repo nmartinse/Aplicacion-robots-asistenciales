@@ -23,14 +23,15 @@
         <h1 class="Copper">Tareas</h1>
         <center>
             <table>
-                <tr>
-                    <th> Tarea</th>
-                    <th>Atributos</th>
-                    <th>Prioridad</th>
-                    <th>Descripción</th>
-                    <th>Asignar tarea</th>
-            
-                </tr>
+                <thead>
+                    <tr>
+                        <th> Tarea</th>
+                        <th>Atributos</th>
+                        <th>Prioridad</th>
+                        <th>Descripción</th>
+                        <th>Asignar tarea</th>
+                    </tr>
+                </thead>
                 {% for task in tasks %}
                     {% if task.id!=1 %}
                             <tr>
