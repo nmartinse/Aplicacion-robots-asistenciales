@@ -6,6 +6,10 @@ cd Scripts
 
 call activate.bat
 
+cd ..
+
+cd ..
+
 cls
 
 cmd /k
