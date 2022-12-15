@@ -37,8 +37,9 @@
             </p>
             <p>
                 Nombre Atributo:
-                <input type="text" name="n_atributo" id="n_atributo" size="45" value=""> &nbsp; &nbsp;
-                <input type="button" class="buttonAnadirTarea2" value="Añadir atributo" onclick="(getElementById('atributos').getAttribute('value')!='') ? getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value) : getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+getElementById('n_atributo').value);">
+                <input type="text" name="n_atributo" id="n_atributo" size="45" value="Atributo-1"> &nbsp; &nbsp;
+                <input type="button" class="buttonAnadirTarea2" value="Añadir atributo"
+                onclick="(getElementById('atributos').getAttribute('value')!='') ? getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value) : getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+getElementById('n_atributo').value);getElementById('n_atributo').setAttribute('value','Atributo-2');">
             </p>
 
             <!-- <script>

@@ -30,10 +30,10 @@
                 <input type="text" name="atributos" id="atributos" size="45" value="" readonly="readonly">
 
                 Nombre Atributo:
-                <input type="text" name="n_atributo" id="n_atributo" size="45" value="Suelo">
+                <input type="text" name="n_atributo" id="n_atributo" size="45" value="Atributo-1">
                 <center> 
-                    <input type="button" class="buttonAnadirTarea2" value="Añadir atributo"
-                        onclick="(getElementById('atributos').getAttribute('value')!='') ? getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value) : getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+getElementById('n_atributo').value);">
+                    <input type="button" name="campo_de_tarea" class="buttonAnadirTarea2" value="Añadir atributo"
+                        onclick="(getElementById('atributos').getAttribute('value')!='') ? getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value) : getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+getElementById('n_atributo').value);getElementById('n_atributo').setAttribute('value','Atributo-2');">
                 </center>
             </p>
                 
