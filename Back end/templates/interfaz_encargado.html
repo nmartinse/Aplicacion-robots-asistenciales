@@ -75,14 +75,14 @@
                         </tr>
                     </thead>
                     {% for inst in instancias %}
-                        {% if inst.id!=1 %}
+                        {% if inst.id!=0 %}
                                 <tr>
                                 <td> {{ inst.content }}</td> 
                                 <td>
                                     {{ inst.priority }}
                                 </td> 
                                 <td>
-                                    {{ inst.atributos }}
+                                    {{ inst.atributos_asignados }}
                                 </td>
                                 <td>
                                     {{ inst.completed }}

@@ -39,7 +39,7 @@ def test():
         
     except:
             return "Problem while insereting in the DB"
-            
+
     return render_template('index.html') # Renderizar index.html
     
 
@@ -190,10 +190,21 @@ def asignar(id):
     if request.method == 'POST':
         # intancias sin los valores de los atributos
         try:
+            # len(atributosii)
+            
+            
+            cadena_con_todos_los_atributos = ""
+
+            for i in [0,1]:
+                cadena_con_todos_los_atributos = cadena_con_todos_los_atributos + request.form['atributos'+str(i)] # Aun no lee los atributos 
+
+            # # task_atribut = request.form['atributos'] # Aun no lee los atributos
+            # task_atribut = cadena_con_todos_los_atributos
+
             task_content = request.form['nombre']
             task_priority=request.form['prioridad']
-            task_atribut = request.form['atributos'] # Aun no lee los atributos
-            instancia_tarea = InstanciaTarea(content=task_content, priority=task_priority, atributos_asignados=task_atribut)
+            
+            instancia_tarea = InstanciaTarea(content=task_content, priority=task_priority, atributos_asignados=cadena_con_todos_los_atributos)
             db.session.add(instancia_tarea)
             db.session.commit()
             return redirect('/interfaz_encargado.html')
@@ -244,7 +255,7 @@ def delete_robot():
 
 @app.route('/delete_Asignada/<int:id>') 
 def delete_Asignada(id):
-    if(id > 1):
+    if(id > 0):
         task_to_delete = InstanciaTarea.query.get_or_404(id)
 
         try:

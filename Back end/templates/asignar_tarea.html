@@ -34,8 +34,8 @@
                 <h3 style="text-align:center">Atributos</h3>
             
             {% for atr in taskinfo %}
-            {{ atr }}
-                <input type="text" name="atributos" size="45">
+            {{ atr }} 
+                <input type="text" name="atributos{{ taskinfo.index(atr) }} " size="45">
                 <br>
             {% endfor %}
             </p>
