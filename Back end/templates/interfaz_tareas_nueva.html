@@ -27,23 +27,16 @@
 
             <p>
                 <h3 style="text-align:center">Atributos</h3>
-                Nombre Atributo:
+                <input type="text" name="atributos" id="atributos" size="45" value="" readonly="readonly">
 
+                Nombre Atributo:
                 <input type="text" name="n_atributo" id="n_atributo" size="45" value="Suelo">
-                <!-- <input type="button" id="clickMe" class="buttonAnadirTarea2" value="Añadir atributo"> -->
-                <center>
-                <button type="button" class="buttonAnadirTarea2" onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+ (0==0) ? ','+getElementById('n_atributo').value : '$10.00');">Añadir atributo</button>
+                <center> 
+                    <input type="button" class="buttonAnadirTarea2" value="Añadir atributo"
+                        onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value)">
                 </center>
-                <p id="demo"></p>
-                <script>
-                    function myFunction() {
-                        // getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value);
-                        //getElementById('atributos').setAttribute('value', 'fkkfek');
-                        
-                        alert('hello!');
-                    }
-                </script>
             </p>
+                
 
 
             <p>
