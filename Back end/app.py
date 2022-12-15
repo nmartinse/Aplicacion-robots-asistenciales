@@ -177,14 +177,12 @@ def asignar(id):
 
     atributosii = atributosi.split(",")
 
-    atributosii.pop(0)
-
     if request.method == 'POST':
         # intancias sin los valores de los atributos
         try:
             task_content = request.form['nombre']
             task_priority=request.form['prioridad']
-            task_atribut = request.form['atributos']
+            task_atribut = request.form['atributos'] # Aun no lee los atributos
             instancia_tarea = InstanciaTarea(content=task_content, priority=task_priority, atributos_asignados=task_atribut)
             db.session.add(instancia_tarea)
             db.session.commit()
@@ -212,8 +210,8 @@ def nuevo_robot():
 
 @app.route('/delete_robot')
 def delete_robot():
-    rob = Robo.query.order_by(Robo.id).all() # Todas las tareas
-    id= rob[-1].id                           # La ultima tarea
+    rob = Robo.query.order_by(Robo.id).all() # Todos los robots
+    id= rob[-1].id                           # El último robot
 
     if(id > 1):
         task_to_delete = Robo.query.get_or_404(id)
@@ -233,6 +231,19 @@ def delete_robot():
     #     return redirect('/Interfaz_tecnico.html')
     # except:
     #     return "Error while deleting the task" + id
+
+@app.route('/delete_Asignada/<int:id>') 
+def delete_Asignada(id):
+    if(id > 1):
+        task_to_delete = InstanciaTarea.query.get_or_404(id)
+
+        try:
+            db.session.delete(task_to_delete)
+            db.session.commit()
+            return redirect('/interfaz_encargado.html')
+        except:
+            return "Error while deleting the task" + id
+    return redirect('/interfaz_.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

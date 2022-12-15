@@ -74,21 +74,21 @@
                             <th>Eliminar</th>
                         </tr>
                     </thead>
-                    {% for inst in intancias %}
-                        {% if intancias.id!=1 %}
+                    {% for inst in instancias %}
+                        {% if inst.id!=1 %}
                                 <tr>
-                                <td> {{ intancias.content }}</td> 
+                                <td> {{ inst.content }}</td> 
                                 <td>
-                                    {{ intancias.priority }}
+                                    {{ inst.priority }}
                                 </td> 
                                 <td>
-                                    {{ intancias.atributos }}
+                                    {{ inst.atributos }}
                                 </td>
                                 <td>
-                                    {{ intancias.completed }}
+                                    {{ inst.completed }}
                                 </td>
                                 <td>
-                                    <button type="button" class="button4" onClick="eliminar()">-</button>
+                                    <button type="button" class="button4" onClick="window.location.href='/delete_Asignada/{{inst.id}}';">-</button>
                                 </td>                      
                             </tr>
                         {% endif %}
