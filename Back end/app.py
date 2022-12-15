@@ -162,7 +162,8 @@ def new_tarea(id):
 @app.route('/interfaz_encargado.html', methods=['POST','GET'])   # Redireccion a Encargado
 def encargado():
     tasks = Todo.query.order_by(Todo.id).all() # tareas ordenadas por id
-    return render_template('interfaz_encargado.html', tasks=tasks)
+    instancias = InstanciaTarea.query.order_by(InstanciaTarea.priority).all() # instancias de tareas ordenadas por prioridad
+    return render_template('interfaz_encargado.html', tasks=tasks, instancias=instancias)
 
 # @app.route('/asignar_tarea.html', methods=['POST','GET'])
 # def asignar_tarea():
@@ -179,14 +180,20 @@ def asignar(id):
     atributosii.pop(0)
 
     if request.method == 'POST':
-
+        # intancias sin los valores de los atributos
         try:
+            task_content = request.form['nombre']
+            task_priority=request.form['prioridad']
+            task_atribut = request.form['atributos']
+            instancia_tarea = InstanciaTarea(content=task_content, priority=task_priority, atributos_asignados=task_atribut)
+            db.session.add(instancia_tarea)
             db.session.commit()
             return redirect('/interfaz_encargado.html')
         except:
-            return "There was an issue when updating the task " + id
+            return "Error: no se ha podido asignar la tarea"
     else:
         return render_template('/asignar_tarea.html', task=task, taskinfo=atributosii)
+
 
 
 @app.route('/nuevo_robot')

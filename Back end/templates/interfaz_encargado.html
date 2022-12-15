@@ -60,21 +60,43 @@
 
 
     <center>
-        <div class="inline-div-izquierda">
+        <div class="inline-div-derecha">
             <h1 class="Copper"> Tareas asignadas</h1>
 
-
+            <center>
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Tarea</th>
+                            <th>Prioridad</th>
+                            <th>Atributos</th>
+                            <th>Estado</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    {% for inst in intancias %}
+                        {% if intancias.id!=1 %}
+                                <tr>
+                                <td> {{ intancias.content }}</td> 
+                                <td>
+                                    {{ intancias.priority }}
+                                </td> 
+                                <td>
+                                    {{ intancias.atributos }}
+                                </td>
+                                <td>
+                                    {{ intancias.completed }}
+                                </td>
+                                <td>
+                                    <button type="button" class="button4" onClick="eliminar()">-</button>
+                                </td>                      
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </table>
 
         </div>
-
-
     </center>
-
-    <div class="inline-div-izquierda2">
-        <br> <br> <br> <br> <br>
-        <button type="button" class="button4" onClick="eliminar()">-</button> <br>
-
-    </div>
 
     <button id="boton2" class="button2" onclick="window.location.href='interfaz_encargado.html';">Reset</button>
 {% endblock %}
