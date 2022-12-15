@@ -190,16 +190,12 @@ def asignar(id):
     if request.method == 'POST':
         # intancias sin los valores de los atributos
         try:
-            # len(atributosii)
-            
-            
+        
             cadena_con_todos_los_atributos = ""
 
-            for i in [0,1]:
-                cadena_con_todos_los_atributos = cadena_con_todos_los_atributos + request.form['atributos'+str(i)] # Aun no lee los atributos 
-
-            # # task_atribut = request.form['atributos'] # Aun no lee los atributos
-            # task_atribut = cadena_con_todos_los_atributos
+            for i in range(len(atributosii)):
+                CampName="atributos"+str(i)
+                cadena_con_todos_los_atributos = cadena_con_todos_los_atributos + request.form[CampName]  + " - " 
 
             task_content = request.form['nombre']
             task_priority=request.form['prioridad']
