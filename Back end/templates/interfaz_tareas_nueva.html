@@ -33,7 +33,7 @@
                 <input type="text" name="n_atributo" id="n_atributo" size="45" value="Suelo">
                 <center> 
                     <input type="button" class="buttonAnadirTarea2" value="Añadir atributo"
-                        onclick="getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value)">
+                        onclick="(getElementById('atributos').getAttribute('value')!='') ? getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+','+getElementById('n_atributo').value) : getElementById('atributos').setAttribute('value', getElementById('atributos').getAttribute('value')+getElementById('n_atributo').value);">
                 </center>
             </p>
                 
