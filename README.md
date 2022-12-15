@@ -14,16 +14,15 @@ Para poder acceder a las dos interfaces diferenciadas se necesitan los dos sigui
 
 Usuario encargado:
 
-	usuario: encargado
-	
+	usuario: Juan Gómez
 	contraseña: encargado
 	
 Usuario técnico:
 
-	usuario: tecnico
-	
+	usuario: Antonio Gutiérrez
 	contraseña: tecnico
 
+<br>
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Robot-asistencial.jpg" style="width:60%">
