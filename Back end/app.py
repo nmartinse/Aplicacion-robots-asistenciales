@@ -29,9 +29,19 @@ class InstanciaTarea(db.Model):
 
 @app.route('/test', methods=['POST', 'GET']) ## Indica qué hacer cuando un usuario llega a la pagina principal
 def test():
+    task_content = "Test"
+    new_task = Todo(content=task_content)
 
-    tasks = Todo.query.order_by(Todo.content).all() # Todas las tareas
-    return str(tasks[-2].id)                        # La ultima tarea
+    try:
+            db.session.add(new_task)
+            db.session.commit()
+            return redirect('/')
+        
+    except:
+            return "Problem while insereting in the DB"
+            
+    return render_template('index.html') # Renderizar index.html
+    
 
 @app.route('/', methods=['POST', 'GET']) ## Indica qué hacer cuando un usuario llega a la pagina principal
 def index():
