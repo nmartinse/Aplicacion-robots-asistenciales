@@ -255,6 +255,8 @@ table {
     width: 95%;
     margin: 25px 0;
     font-size: 0.9em;
+    font-family: "Segoe UI";
+    text-align: center;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
